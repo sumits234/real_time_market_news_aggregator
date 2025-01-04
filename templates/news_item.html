@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ news_item['title'] }}</title>
+</head>
+<body>
+    <h1>{{ news_item['title'] }}</h1>
+    <img src="{{ news_item['image_url'] }}" alt="News Image" style="max-width: 100%;">
+    <p>{{ news_item['snippet'] }}</p>
+    <a href="{{ url_for('read', index=index-1) }}" {% if index == 0 %} style="display:none;" {% endif %}>Prev</a>
+    <a href="{{ url_for('read', index=index+1) }}" {% if index == total-1 %} style="display:none;" {% endif %}>Next</a>
+    <a href="{{ news_item['url'] }}" target="_blank">Read More</a>
+</body>
+</html>
