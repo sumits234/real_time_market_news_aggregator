@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+</head>
+<body>
+    <h1>News</h1>
+    <ul>
+        {% for news in news_data %}
+            <li>
+                <a href="{{ url_for('read', index=loop.index0) }}">{{ news['title'] }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
